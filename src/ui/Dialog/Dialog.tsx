@@ -1,11 +1,11 @@
-import React from "react";
+import React, { type ReactNode, type MouseEvent } from "react";
 import { IconButton } from "../Buttons";
 import { IconClose } from "../icons";
 
 interface DialogProps {
   title: string;
-  children: React.ReactNode;
-  actions: React.ReactNode;
+  children: ReactNode;
+  actions: ReactNode;
   onClose: () => void;
   isOpen: boolean;
 }
@@ -23,12 +23,12 @@ export const Dialog = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
       onClick={onClose}
     >
       <div
         className="relative bg-mono-100 rounded-3xl shadow-lg w-full max-w-dialog min-w-dialog m-4"
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: MouseEvent) => e.stopPropagation()}
       >
         <div className="absolute top-12 right-12">
           <IconButton
@@ -47,4 +47,4 @@ export const Dialog = ({
       </div>
     </div>
   );
-}; 
+};
