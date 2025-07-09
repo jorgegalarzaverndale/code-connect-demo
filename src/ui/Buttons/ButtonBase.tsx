@@ -1,5 +1,5 @@
 import { ReactEventHandler, ReactNode } from "react";
-import "./buttonBase.css";
+import cn from "clsx";
 
 type ButtonBasePropsSize = "small" | "medium";
 type ButtonBasePropsVariant = "primary" | "secondary" | "inverse";
@@ -144,33 +144,70 @@ export const ButtonBase = ({
   variant = "primary",
   ...props
 }: ButtonBaseProps) => {
-  const classNames = ["button-base", `button-base-variant-${variant}`];
   const contents: ReactNode[] = [];
 
+  const variantClasses = {
+    primary:
+      "bg-blue-400 text-mono-100 hover:bg-blue-500 active:bg-blue-300 dark:bg-blue-200 dark:text-mono-500 dark:hover:bg-blue-300 dark:active:bg-blue-100",
+    secondary:
+      "bg-purple-400 text-mono-100 hover:bg-purple-500 active:bg-purple-300 dark:bg-purple-200 dark:text-mono-500 dark:hover:bg-purple-300 dark:active:bg-purple-100",
+    inverse:
+      "bg-mono-100 text-mono-500 hover:bg-mono-200 active:bg-mono-300 dark:bg-mono-500 dark:text-mono-100 dark:hover:bg-mono-400 dark:active:bg-mono-300",
+  };
+
+  const classNames = [
+    "cursor-pointer flex relative items-center justify-center rounded-24 focus:outline-none focus:ring-2 focus:ring-blue-300",
+    variantClasses[variant],
+    "disabled:cursor-not-allowed disabled:pointer-events-none disabled:bg-mono-300 disabled:text-mono-400",
+  ];
+
   if (isIconOnlyProps(props)) {
-    classNames.push("button-base-icon-only");
+    classNames.push("w-24 h-24 p-12");
     contents.push(props.icon);
   } else if (isIconsProps(props)) {
-    classNames.push(`button-base-size-${props.size}`);
+    if (props.size === "small") {
+      classNames.push(
+        "text-base leading-[1.75rem] tracking-[-0.01rem] py-4 px-16"
+      );
+    } else {
+      classNames.push(
+        "text-[1.125rem] leading-[2rem] tracking-[-0.01125rem] py-8 px-24"
+      );
+    }
+
     if (props.iconStart) {
-      classNames.push("button-base-icon-start");
+      classNames.push("gap-8");
+      if (props.size !== "small") {
+        classNames.push("pl-16");
+      }
+    }
+    if (props.iconEnd) {
+      classNames.push("gap-8");
+      if (props.size !== "small") {
+        classNames.push("pr-16");
+      }
+    }
+    if (props.iconStart) {
       contents.push(props.iconStart);
     }
     contents.push(props.children);
     if (props.iconEnd) {
-      classNames.push("button-base-icon-end");
       contents.push(props.iconEnd);
     }
   }
 
   if (isElementAnchorProps(props)) {
-    if (disabled) classNames.push("button-base-disabled");
+    if (disabled) {
+      // "disabled" attribute does not exist on anchor elements.
+      // We need to prevent click events and add disabled styles manually.
+      classNames.push("pointer-events-none bg-mono-300 text-mono-400");
+    }
     return (
       <a
         aria-label={ariaLabel}
-        className={classNames.join(" ")}
-        href={props.href}
-        onClick={props.onClick}
+        className={cn(classNames)}
+        href={!disabled ? props.href : undefined}
+        onClick={!disabled ? props.onClick : (e) => e.preventDefault()}
       >
         {contents}
       </a>
@@ -180,7 +217,7 @@ export const ButtonBase = ({
     return (
       <button
         aria-label={ariaLabel}
-        className={classNames.join(" ")}
+        className={cn(classNames)}
         disabled={disabled}
         onClick={props.onClick}
         type={props.type || "button"}

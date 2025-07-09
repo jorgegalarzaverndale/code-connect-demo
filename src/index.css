@@ -1,23 +1,74 @@
-@import url("./theme.css");
+@import "tailwindcss";
 
-body {
-  font-size: 1rem;
-  margin: 0;
-}
-body,
-button,
-input,
-select {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+@theme {
+  --color-blue-100: #e8f1ff;
+  --color-blue-200: #cee2ff;
+  --color-blue-300: #3887ff;
+  --color-blue-400: #0055d5;
+  --color-blue-500: #00255c;
+  --color-green-100: #edfaee;
+  --color-green-200: #d8f5db;
+  --color-green-300: #5fd76b;
+  --color-green-400: #2baa37;
+  --color-green-500: #124918;
+  --color-mono-100: #ffffff;
+  --color-mono-200: #f0f0f0;
+  --color-mono-300: #c7c7c7;
+  --color-mono-400: #878787;
+  --color-mono-500: #141414;
+  --color-purple-100: #f5e8ff;
+  --color-purple-200: #eaceff;
+  --color-purple-300: #a938ff;
+  --color-purple-400: #7900d5;
+  --color-purple-500: #34005c;
+  --color-red-100: #ffe8e8;
+  --color-red-200: #ffcece;
+  --color-red-300: #ff3838;
+  --color-red-400: #d50000;
+  --color-red-500: #5c0000;
+  --color-yellow-100: #ffffe8;
+  --color-yellow-200: #feffce;
+  --color-yellow-300: #fcff38;
+  --color-yellow-400: #d1d500;
+  --color-yellow-500: #5a5c00;
+
+  --spacing-0: 0px;
+  --spacing-1: 1px;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-9999: 9999px;
+
+  --radius-0: 0px;
+  --radius-1: 1px;
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-28: 28px;
+  --radius-32: 32px;
+  --radius-40: 40px;
+  --radius-48: 48px;
+  --radius-64: 64px;
+  --radius-9999: 9999px;
+  
+  --text-heading-03: 1.5rem;
+  --text-body-01: 1.125rem;
+
+  --max-width-dialog: 500px;
+  --min-width-dialog: 250px;
 }

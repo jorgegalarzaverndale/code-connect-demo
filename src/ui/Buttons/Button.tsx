@@ -37,7 +37,7 @@ export const Button = ({
   // The "Disabled" state from Figma maps to the `disabled` prop on the ButtonBase component.
   const isDisabled = state === "Disabled" || disabled;
 
-  // Other states (Hover, Active, Focus) are handled by CSS pseudo-classes in buttonBase.css.
+  // Other states (Hover, Active, Focus) are handled by Tailwind CSS utility classes in ButtonBase.tsx.
 
   return (
     <ButtonBase
