@@ -1,63 +1,33 @@
-:root {
-  --font-heading-03: 1.5rem; /* 24px */
-  --font-body-01: 1.125rem; /* 18px */
-  --dialog-max-width: 500px;
-  --dialog-min-width: 250px;
-}
-
-/* Overlay covering the viewport */
-.dialog-overlay {
-  background: var(--color-bg-scrim);
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: var(--gap-xxl);
-  z-index: 1000;
-}
-
-/* Dialog container */
 .dialog {
+  display: flex;
+  align-items: flex-start;
   background: var(--color-bg-default);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-heavy);
-  max-width: var(--dialog-max-width);
-  min-width: var(--dialog-min-width);
-  width: 100%;
-  display: flex;
+  border-top: var(--size-1) solid var(--color-border-default);
+  bottom: 0;
   flex-direction: column;
-  position: relative;
-}
-
-/* Close button wrapper */
-.dialog-close {
-  position: absolute;
-  top: var(--padding-comfortable);
-  right: var(--padding-comfortable);
-}
-
-/* Title */
-.dialog-title {
-  font-size: var(--font-heading-03);
-  color: var(--color-text-body);
-  padding: var(--gap-xxl) var(--padding-baggy) var(--gap-md);
-  line-height: 1;
-}
-
-/* Content */
-.dialog-content {
-  font-size: var(--font-body-01);
-  color: var(--color-text-body);
-  padding: 0 var(--padding-baggy) var(--padding-baggy);
-  line-height: 1.5;
-}
-
-/* Actions */
-.dialog-actions {
-  display: flex;
   justify-content: flex-end;
-  gap: var(--gap-md);
-  padding: var(--padding-spacious) var(--padding-spacious) var(--padding-baggy);
-  border-top: 1px solid var(--color-border-default);
-} 
+  left: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.dialog > .button-base-icon-only {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .dialog {
+    border-radius: var(--radius-heavy);
+    border: var(--size-1) solid var(--color-border-default);
+    max-width: 30rem;
+    position: relative;
+    width: 90%;
+  }
+
+  .dialog > .button-base-icon-only {
+    display: block;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+  }
+}
