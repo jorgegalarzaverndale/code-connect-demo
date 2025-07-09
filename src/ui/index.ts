@@ -1,3 +1,3 @@
 export * from "./Buttons";
-export * from "./icons";
 export * from "./Dialog";
+export * from "./icons";

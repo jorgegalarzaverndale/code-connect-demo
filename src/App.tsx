@@ -1,4 +1,4 @@
-import { Button, Dialog, IconStar } from "ui";
+import { Button, IconStar, Dialog } from "./ui";
 import { useState } from "react";
 
 function App() {
@@ -145,14 +145,14 @@ function App() {
       </div>
 
       <Dialog
-        open={showDialog}
+        isOpen={showDialog}
         onClose={() => setShowDialog(false)}
-        title="Here is a headline"
+        title="Dialog Title"
         actions={
           <>
             <Button
               variant="Inverse"
-              size="Small"
+              size="Medium"
               label="Cancel"
               onClick={() => setShowDialog(false)}
             />
@@ -165,8 +165,9 @@ function App() {
           </>
         }
       >
-        Here is some content. Here is some content. Here is some content. Here
-        is some content. Here is some content. Here is some content.
+        <p>
+          This is the dialog content. You can put any React components here.
+        </p>
       </Dialog>
 
       {/* More components will be listed here */}

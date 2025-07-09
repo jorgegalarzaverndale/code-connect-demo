@@ -2,4 +2,7 @@
 alwaysApply: true
 ---
 
-For CSS values, always use the variables we have in the theme.css. If a variable is not there, then create it. 
+# Tailwind CSS Rules
+
+- Use utility classes for styling instead of custom CSS when possible
+- Use the theming in the index.css

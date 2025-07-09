@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+
+- For styles follow the rules in styles.mdc
+- Never make assumptions, stop and ask if you have questions
+- Create new styles variables if needed

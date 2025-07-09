@@ -148,11 +148,10 @@ export const ButtonBase = ({
 
   const variantClasses = {
     primary:
-      "bg-blue-400 text-mono-100 hover:bg-blue-500 active:bg-blue-300 dark:bg-blue-200 dark:text-mono-500 dark:hover:bg-blue-300 dark:active:bg-blue-100",
+      "bg-blue-400 text-mono-100 hover:bg-blue-500 active:bg-blue-300",
     secondary:
-      "bg-purple-400 text-mono-100 hover:bg-purple-500 active:bg-purple-300 dark:bg-purple-200 dark:text-mono-500 dark:hover:bg-purple-300 dark:active:bg-purple-100",
-    inverse:
-      "bg-mono-100 text-mono-500 hover:bg-mono-200 active:bg-mono-300 dark:bg-mono-500 dark:text-mono-100 dark:hover:bg-mono-400 dark:active:bg-mono-300",
+      "bg-purple-400 text-mono-100 hover:bg-purple-500 active:bg-purple-300",
+    inverse: "bg-mono-100 text-mono-500 hover:bg-mono-200 active:bg-mono-300",
   };
 
   const classNames = [
