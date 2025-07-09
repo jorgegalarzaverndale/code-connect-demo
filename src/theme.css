@@ -120,6 +120,10 @@
   --color-text-inactive: var(--color-mono-300);
   --color-text-link: var(--color-blue-400);
   --color-text-subdued: var(--color-mono-400);
+
+  /* Typography */
+
+
 }
 
 /* Color Dark Mode */

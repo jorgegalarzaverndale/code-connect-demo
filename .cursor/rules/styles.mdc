@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+For CSS values, always use the variables we have in the theme.css. If a variable is not there, then create it. 
